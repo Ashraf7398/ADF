@@ -1,0 +1,106 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "endtoendprojectadfdev"
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'",
+			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=endtoendprojectserver.database.windows.net;Initial Catalog=endtoendprojectDBsource;User ID=ashraf9554"
+		},
+		"AdlssinkLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://endtoendprojectadlsdev.dfs.core.windows.net/"
+		},
+		"AdlssinkLS_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "87f4ff3b-3580-48c0-a908-4355f6117d56"
+		},
+		"AdlssinkLS_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "67edeb3c-8ac5-4859-8732-c1443fbd2b55"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://endtoendprojectkeyvault.vault.azure.net/"
+		},
+		"RestServiceLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://airlabs.co/api/v9/airlines"
+		},
+		"adlssourceLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://endprojecttsourceadls.dfs.core.windows.net/"
+		},
+		"adlssourceLS_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "87f4ff3b-3580-48c0-a908-4355f6117d56"
+		},
+		"adlssourceLS_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "67edeb3c-8ac5-4859-8732-c1443fbd2b55"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "endtoendprojectadfdev_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureSqlDatabase1_connectionString": {
+						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"RestServiceLS_properties_typeProperties_url": {
+						"value": "[parameters('RestServiceLS_properties_typeProperties_url')]"
+					},
+					"AdlssinkLS_properties_typeProperties_url": {
+						"value": "[parameters('AdlssinkLS_properties_typeProperties_url')]"
+					},
+					"AdlssinkLS_properties_typeProperties_tenant": {
+						"value": "[parameters('AdlssinkLS_properties_typeProperties_tenant')]"
+					},
+					"AdlssinkLS_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('AdlssinkLS_properties_typeProperties_servicePrincipalId')]"
+					},
+					"adlssourceLS_properties_typeProperties_url": {
+						"value": "[parameters('adlssourceLS_properties_typeProperties_url')]"
+					},
+					"adlssourceLS_properties_typeProperties_tenant": {
+						"value": "[parameters('adlssourceLS_properties_typeProperties_tenant')]"
+					},
+					"adlssourceLS_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('adlssourceLS_properties_typeProperties_servicePrincipalId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "endtoendprojectadfdev"
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=endtoendprojectserver.database.windows.net;Initial Catalog=endtoendprojectDBsource;User ID=ashraf9554"
+		},
+		"AdlssinkLS_properties_typeProperties_url": {
+			"value": "https://endtoendprojectadlsdev.dfs.core.windows.net/"
+		},
+		"AdlssinkLS_properties_typeProperties_tenant": {
+			"value": "87f4ff3b-3580-48c0-a908-4355f6117d56"
+		},
+		"AdlssinkLS_properties_typeProperties_servicePrincipalId": {
+			"value": "67edeb3c-8ac5-4859-8732-c1443fbd2b55"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://endtoendprojectkeyvault.vault.azure.net/"
+		},
+		"RestServiceLS_properties_typeProperties_url": {
+			"value": "https://airlabs.co/api/v9/airlines"
+		},
+		"adlssourceLS_properties_typeProperties_url": {
+			"value": "https://endprojecttsourceadls.dfs.core.windows.net/"
+		},
+		"adlssourceLS_properties_typeProperties_tenant": {
+			"value": "87f4ff3b-3580-48c0-a908-4355f6117d56"
+		},
+		"adlssourceLS_properties_typeProperties_servicePrincipalId": {
+			"value": "67edeb3c-8ac5-4859-8732-c1443fbd2b55"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
