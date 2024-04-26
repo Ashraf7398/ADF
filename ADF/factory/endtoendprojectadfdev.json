@@ -1,0 +1,9 @@
+{
+	"name": "endtoendprojectadfdev",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d1efe17d-f780-4cae-9bfb-edc67b0eaef3",
+		"tenantId": "87f4ff3b-3580-48c0-a908-4355f6117d56"
+	}
+}

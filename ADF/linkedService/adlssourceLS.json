@@ -1,0 +1,22 @@
+{
+	"name": "adlssourceLS",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://endprojecttsourceadls.dfs.core.windows.net/",
+			"tenant": "87f4ff3b-3580-48c0-a908-4355f6117d56",
+			"servicePrincipalId": "67edeb3c-8ac5-4859-8732-c1443fbd2b55",
+			"servicePrincipalCredentialType": "ServicePrincipalKey",
+			"servicePrincipalCredential": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "datasecretid"
+			}
+		}
+	}
+}
