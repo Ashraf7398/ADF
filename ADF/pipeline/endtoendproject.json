@@ -30,8 +30,8 @@
 						"referenceName": "JsonDS",
 						"type": "DatasetReference",
 						"parameters": {
-							"conatiner": "manualfiles",
-							"filename": "Table_Source_Datalake"
+							"conatiner": "manualfile",
+							"filename": "Table_Source_Datalake.json"
 						}
 					},
 					"firstRowOnly": false
